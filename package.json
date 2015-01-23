@@ -1,0 +1,11 @@
+{
+  "name": "abv",
+  "version": "0.0.1",
+  "description": "",
+  "devDependencies": {
+    "cloudant": "^1.0.0-beta3"
+  },
+  "dependencies": {
+    "cloudant": "^1.0.0-beta3"
+  }
+}
