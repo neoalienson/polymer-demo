@@ -1,5 +1,11 @@
 var abv = require('./abv')
 
-//abv.upload('aa');
-var mongoose = abv.dbConnect('dev');
+var dbPromise = abv.dbConnect('dev',
+function() {
+/*
+  abv.upload('tests/abv.js', function() {
+    abv.mongoose.connection.close();
+  });
+*/
+});
 
