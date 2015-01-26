@@ -2,3 +2,4 @@
 node_modules
 db
 bower_components
+app/js/config.js
