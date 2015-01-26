@@ -1,0 +1,44 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="story-element.html">
+
+<polymer-element name="stories-element">
+	<template>
+	<style>
+		:host {
+			display: block;
+			width: 100%;
+		}
+		post-card {
+			margin-bottom: 30px;
+		}
+	</style>
+	
+	<core-ajax id="ajax"
+      auto
+      url="../stubs/stories.json"
+      on-core-response="{{storiesLoaded}}"
+      handleAs="json">
+    </core-ajax>
+    
+    <div layout vertical center>
+		<template repeat="{{story in stories}}">
+			<story-element title='{{story.title}}'>
+			<img src="../images/avatar-07.svg" width="70" height="70">
+			</story-element>
+		</template>
+    </div>
+
+	</template>
+	<script>
+	Polymer({
+		created: function() {
+			this.stories = [];
+		},
+		
+		storiesLoaded: function() {
+			this.stories = this.$.ajax.response.slice(0);
+		}
+	});
+	</script>
+</polymer-element>
