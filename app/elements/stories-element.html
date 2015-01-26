@@ -16,7 +16,7 @@
 	
 	<core-ajax id="ajax"
       auto
-      url="../stubs/stories.json"
+      url="../app/{{env}}/stories.json"
       on-core-response="{{storiesLoaded}}"
       handleAs="json">
     </core-ajax>
@@ -34,6 +34,7 @@
 	Polymer({
 		created: function() {
 			this.stories = [];
+			this.env = env;
 		},
 		
 		storiesLoaded: function() {
