@@ -7,8 +7,8 @@ Abv.dbConnect = function(env) {
   db.on('error', console.error);
   var abv = this;
   db.once('open', function() {
-    console.log('open');
     abv.createSchema();
+    db.close()
   });
   var connectionStr = 'mongodb://localhost/' + env;
   console.log('connecting to ' + connectionStr);
