@@ -9,7 +9,8 @@
 			display: block;
 			width: 100%;
 		}
-		post-card {
+		story-element {
+			margin-top: 30px;
 			margin-bottom: 30px;
 		}
 	</style>
@@ -24,7 +25,7 @@
     <div layout vertical center>
 		<template repeat="{{story in stories}}">
 			<story-element title='{{story.title}}'>
-			<img src="../images/avatar-07.svg" width="70" height="70">
+			<img src="images/avatar-{{story.id}}.svg" width="70" height="70">
 			</story-element>
 		</template>
     </div>
