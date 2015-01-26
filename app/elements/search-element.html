@@ -1,0 +1,17 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="search-element">
+	<template>
+		<paper-input label="Search..." class="custom" on-keyup="{{filter}}"></paper-input>
+	</template>
+	<script>
+	Polymer({
+		filter : function(e, detail, sender) {
+			var element = document.querySelector('stories-element');
+			if (element) {
+				element.searchTerm = sender.value;
+			}
+		}
+	});
+	</script>
+</polymer-element>

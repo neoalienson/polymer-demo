@@ -15,12 +15,7 @@
 		}
 	</style>
 	
-	<core-ajax id="ajax"
-      auto
-      url="../app/{{env}}/stories.json"
-      on-core-response="{{storiesLoaded}}"
-      handleAs="json">
-    </core-ajax>
+	<core-ajax id="ajax" auto url="../app/{{env}}/stories.json" on-core-response="{{storiesLoaded}}" handleAs="json"></core-ajax>
     
     <div layout vertical center>
 		<template repeat="{{story in stories}}">
@@ -33,13 +28,32 @@
 	</template>
 	<script>
 	Polymer({
+		searchTerm : "", 
+		
+		searchTermChanged : function(oldValue, newValue) {
+			this.filter();
+		},
+		
 		created: function() {
 			this.stories = [];
+			this.rawStories = [];
 			this.env = env;
 		},
 		
 		storiesLoaded: function() {
-			this.stories = this.$.ajax.response.slice(0);
+			this.rawStories = this.$.ajax.response.slice(0);
+			this.filter();
+		},
+		
+		filter: function() {
+			if (this.searchTerm == '') {
+				this.stories = this.rawStories;			
+				return;
+			}
+			var searchTerm = this.searchTerm.toUpperCase();
+			this.stories = this.rawStories.filter(function(d, idx, array) {
+				return d.title.toUpperCase().indexOf(searchTerm) > -1;
+			});
 		}
 	});
 	</script>

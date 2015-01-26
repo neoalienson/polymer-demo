@@ -7,6 +7,7 @@
     "core-icon-button": "Polymer/core-icon-button#~0.5.4",
     "core-header-panel": "Polymer/core-header-panel#~0.5.4",
     "core-toolbar": "Polymer/core-toolbar#~0.5.4",
-    "paper-tabs": "Polymer/paper-tabs#~0.5.4"
+    "paper-tabs": "Polymer/paper-tabs#~0.5.4",
+    "paper-input": "Polymer/paper-input#~0.5.4"
   }
 }
