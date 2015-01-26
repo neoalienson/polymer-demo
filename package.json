@@ -3,10 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "devDependencies": {
-    "cloudant": "^1.0.0-beta3",
     "intern": "^2.2.2"
   },
   "dependencies": {
-    "cloudant": "^1.0.0-beta3"
+    "mongoose": "^3.8.21"
   }
 }

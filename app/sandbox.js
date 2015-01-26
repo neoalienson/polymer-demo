@@ -1,4 +1,5 @@
 var abv = require('./abv')
 
 //abv.upload('aa');
-abv.dbConnect('poc', 'bebebubu');
+var mongoose = abv.dbConnect('dev');
+
